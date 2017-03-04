@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets  
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+    <CodeSnippet Format="1.0.0">  
+        <Header>  
+            <Title>Add ViewModel Property</Title>  
+            <Description>Add property with RaisePropertyChanged event.</Description>  
+            <Shortcut>propvm</Shortcut>  
+        </Header>  
+        <Snippet>  
+            <Declarations>
+                <Literal>
+                    <ID>Type</ID>
+                    <ToolTip>Literal type.</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Object>
+                    <ID>PropertyName</ID>
+                    <Type>string</Type>
+                    <ToolTip>Property name</ToolTip>
+                    <Default>PropertyName</Default>
+                </Object>
+            </Declarations>
+            <Code Language="CSharp">  
+                <![CDATA[/// $Summary$
+                private $Type$ _$PropertyName$;
+                /// <summary>$Summary$</summary>
+                public $Type$ $PropertyName$
+                {
+                    get { return _$PropertyName$; }
+                    set
+                    { 
+                        if(_$PropertyName$ != value)
+                        {
+                            _$PropertyName$ = value;
+                            RaisePropertyChanged();
+                        }
+                    }
+                }]]>  
+            </Code>  
+        </Snippet>  
+    </CodeSnippet>  
+</CodeSnippets>  
